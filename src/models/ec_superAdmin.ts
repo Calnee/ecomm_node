@@ -33,10 +33,7 @@ superAdmin.init(
     },
     registration_id:{
       type:DataTypes.STRING,
-      allowNull: true,
-      defaultValue: () => {
-        return Math.floor(100000 + Math.random() * 900000).toString();
-      },
+      allowNull: false,
     },
     registration_time_stamp:{
       type:DataTypes.DATE,

@@ -9,12 +9,11 @@ import indexRoutes from './roots/index.ts';
 import supplierRoutes from './roots/supplierRoutes.ts';
 
 app.use(express.json());
-app.use(indexRoutes);
+app.use('/api/v2',indexRoutes);
 // app.use(middleWare);
 //app.use('/api/v1',mioddleWare,supplierRoutes);
 app.use('/api/v1',supplierRoutes);
 // app.use(req, res, next) => middleWare (req, res, next);
-
 
 sequelize
   .sync({ force: false })
@@ -25,7 +24,5 @@ sequelize
   .catch((error:any) => {
     console.log("Database not synced", error);
   });
-
- 
 
 app.listen(3000, () => console.log("listening..."));

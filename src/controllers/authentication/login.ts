@@ -72,6 +72,7 @@ const login = async (req: Request, res: Response): Promise<Response<any>> => {
         },
       });
 
+
       if (supplier != null) {
         if (supplier && bcrypt.compareSync(password, supplier.password)) {
           const token = jwt.sign({ user_reg: supplier?.registration_id, user_type }, "my_secret", { expiresIn: "24h" });
