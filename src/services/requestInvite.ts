@@ -12,7 +12,7 @@ const requestInvite = async(req:Request, res:Response): Promise<any> => {
                 {
                     customer_id: customer_id,
                     supplier_id: supplier_id,
-                    status: "Pending"
+                    status: 'Pending'
                 },
                 {raw: true}
             );

@@ -34,6 +34,7 @@ EcSuppliers.init(
     registration_id:{
       type:DataTypes.STRING,
       allowNull: true,
+      unique: true,
       defaultValue: () => {
         return Math.floor(100000 + Math.random() * 900000).toString();
       },

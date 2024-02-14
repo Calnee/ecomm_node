@@ -13,10 +13,12 @@ supp_cus_mapp.init(
           customer_id: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
           }  ,
           supplier_id: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
           }  ,
           status: {
             type: DataTypes.STRING,
@@ -24,17 +26,17 @@ supp_cus_mapp.init(
           },
           registration_time_stamp:{
             type:DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
           },
           createdAt: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
           },
           updatedAt:{
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), 
           },      
     },
