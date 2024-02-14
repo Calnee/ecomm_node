@@ -29,6 +29,9 @@ ec_customer.init(
     profile_pic:{
       type:DataTypes.STRING,
       allowNull: true,
+      defaultValue: () => {
+        return Math.floor(100000 + Math.random() * 900000).toString();
+      },
     },
     registration_id:{
       type:DataTypes.STRING,

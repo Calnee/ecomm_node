@@ -1,0 +1,7 @@
+updateOne()
+updateMany()
+$set: {}
+MongoCLient ---> instead of sequelize
+client = new MongoCLient(..configuration..)
+client.connect()
+client.close()
