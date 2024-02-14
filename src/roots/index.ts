@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import login from "../controllers/authentication/login";
 import register from "../controllers/authentication/register";
+import adminLogin from "../controllers/authentication/adminLogin.";
 
 
 const router = Router();
@@ -18,7 +19,8 @@ router.post("/register", async (req: Request, res:Response) => {
 
   router.post("/login", async (req:Request, res:Response) => {
 
-    login(req, res);
+   // login(req, res);
+    adminLogin(req, res);
 
   });
 

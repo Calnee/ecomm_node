@@ -1,8 +1,9 @@
 import { DataTypes, Sequelize } from 'sequelize';
 import  sequelize  from '../config/sequelize-config'; // Import the Sequelize instance
-
+import Associations from './Association';
 import subPlan from '../../types/modelTypes/sub_plan';
 
+Associations();
 subPlan.init(
   {
     id: {

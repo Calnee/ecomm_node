@@ -38,6 +38,10 @@ EcSuppliers.init(
         return Math.floor(100000 + Math.random() * 900000).toString();
       },
     },
+    pur_sub_plan: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     registration_time_stamp:{
       type:DataTypes.DATE,
       allowNull: false,
