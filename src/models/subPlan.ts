@@ -12,7 +12,7 @@ subPlan.init(
       autoIncrement: true,
       allowNull: false,
     }  ,
-    plan_name: {
+    plan_id: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -34,7 +34,6 @@ EcSuppliers.init(
     registration_id:{
       type:DataTypes.STRING,
       allowNull: true,
-      unique: true,
       defaultValue: () => {
         return Math.floor(100000 + Math.random() * 900000).toString();
       },
@@ -61,6 +60,13 @@ EcSuppliers.init(
    
   },
   {
+    indexes: [
+      {
+        unique: true,
+        fields: ['registration_id'],
+      },
+      // Add other indexes if needed
+    ],
     sequelize,
     modelName: 'ec_suppliers',
     tableName: 'ec_suppliers',

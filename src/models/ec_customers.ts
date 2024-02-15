@@ -33,7 +33,6 @@ ec_customer.init(
     registration_id:{
       type:DataTypes.STRING,
       allowNull: true,
-      unique:true,
       defaultValue: () => {
         return Math.floor(100000 + Math.random() * 900000).toString();
       },
@@ -56,6 +55,13 @@ ec_customer.init(
    
   },
   {
+    indexes: [
+      {
+        unique: true,
+        fields: ['registration_id'],
+      },
+      // Add other indexes if needed
+    ],
     sequelize,
     modelName: 'ec_customer',
     tableName: 'ec_customer',
