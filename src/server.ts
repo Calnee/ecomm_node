@@ -13,6 +13,7 @@ import requestPlan from './roots/requestPlan.ts';
 import { connectToMongoDb } from './services/mongodb.ts';
 import { stopMongoDb } from './services/mongodb.ts';
 import addProducts from './roots/addProducts.ts';
+import getproducts from './roots/getProducts.ts';
 
 app.use(express.json());
 app.use(cors());
@@ -23,6 +24,7 @@ app.use('/api/v1',supplierRoutes);
 app.use('/api/v3',subPlanRoute);
 app.use('/api/v4',requestPlan);
 app.use('/api/v5',addProducts);
+app.use('/api/v6',getproducts);
 connectToMongoDb();
 // app.use(req, res, next) => middleWare (req, res, next);
 

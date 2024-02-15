@@ -5,3 +5,13 @@ MongoCLient ---> instead of sequelize
 client = new MongoCLient(..configuration..)
 client.connect()
 client.close()
+
+limit()   skip(offset)
+
+sorting({what: how})
+sortBy: what
+sortOrder: how
+
+$regex: search
+regex= new Regexp({string: ,options:" "})
+find({$or: [{prdt_name: {$regex: regex}},{......}]})
