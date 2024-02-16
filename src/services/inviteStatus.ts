@@ -3,7 +3,7 @@ import sup_cus_mapp from '../models/supp_cus_map';
 
 const inviteStatus = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { customer_id, status, user_type } = req.body;
+        const { supplier_id, customer_id, status, user_type } = req.body;
 
         if (user_type === 'customer') {
             const updated = await sup_cus_mapp.update(

@@ -25,6 +25,10 @@ const associations = () => {
         foreignKey: 'pur_sub_plan',
         sourceKey: 'plan_id'
     })
+    EcSuppliers.belongsTo(subPlan, {
+        foreignKey: 'pur_sub_plan',
+        targetKey: 'plan_id'
+    })
 }
  
 export default associations

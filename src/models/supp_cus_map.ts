@@ -41,6 +41,12 @@ supp_cus_mapp.init(
           },      
     },
     {
+      indexes: [
+        {
+          unique: true,
+          fields: ['supplier_id', 'customer_id']
+        }
+      ],
         sequelize,
         modelName: 'cus_sup_mapp',
         tableName: 'cus_sup_mapp'

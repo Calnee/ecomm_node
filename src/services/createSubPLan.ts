@@ -3,11 +3,12 @@ import subPlan from '../models/subPlan';
 
 const createSubPlan = async (req: Request, res: Response): Promise<Response<any>> => {
   try {
-    const { plan_name, sub_fee, no_of_customers, user_type } = req.body;
+    const { plan_id,plan_name, sub_fee, no_of_customers, user_type } = req.body;
 
     if (user_type === 'admin') {
 
         const newSubscriptionPlan = await subPlan.create({
+            plan_id,
             plan_name,
             sub_fee,
             no_of_customers,

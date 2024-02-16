@@ -4,19 +4,20 @@ import subPlan from '../models/subPlan';
 
 const requestPlan = async (req: Request, res: Response): Promise<Response<any>> => {
 
-    const { e_mail, user_type, id } = req.body;
+    const { e_mail, user_type, plan_id } = req.body;
 
     try {
 
         if (user_type === 'supplier') {
 
-            if (id) {
+            if (plan_id) {
 
-                const planId = await subPlan.findByPk(id);
+                const planId = await subPlan.findByPk(plan_id);
+            
                 if (planId) {
                     const updatedSupplier = await ec_suppliers.update(
                         {
-                            pur_sub_plan: id,  
+                            pur_sub_plan: plan_id,  
                         },
                         {
                             where: {
